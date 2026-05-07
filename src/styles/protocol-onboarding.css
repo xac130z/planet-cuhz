@@ -1,0 +1,161 @@
+/* Protocol Onboarding Styles - matches portal neon/glass aesthetic */
+
+.onb-card.glass {
+  position: relative;
+  z-index: 10;
+  max-width: clamp(360px, 94vw, 720px);
+  width: 100%;
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  background: rgba(15, 15, 15, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 0 40px rgba(0, 234, 255, 0.20);
+  min-height: 320px;
+}
+
+.onb-form {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.onb-form .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.onb-form .field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.onb-form .field input,
+.onb-form .field select,
+.onb-form .field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.onb-form .field input::placeholder,
+.onb-form .field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.onb-form .field input:focus-visible,
+.onb-form .field select:focus-visible,
+.onb-form .field textarea:focus-visible {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(0, 234, 255, 0.55), 0 0 24px rgba(0, 234, 255, 0.25);
+}
+
+.onb-form .field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.onb-form .field-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.onb-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.onb-btn-primary {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1rem;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-red));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.2s ease;
+}
+
+.onb-btn-primary:hover {
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.onb-btn-primary:active {
+  transform: translateY(0);
+}
+
+.onb-btn-primary.loading {
+  opacity: 0.8;
+  cursor: progress;
+}
+
+.onb-btn-secondary {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.onb-btn-secondary:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.onb-alert {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 51, 102, 0.1);
+  border: 1px solid rgba(255, 51, 102, 0.3);
+  color: #ff6b8a;
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+
+.onb-helper {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+@media (max-width: 640px) {
+  .onb-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .onb-btn-primary,
+  .onb-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .onb-form .field-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onb-btn-primary,
+  .onb-btn-secondary {
+    transition: none;
+  }
+}
